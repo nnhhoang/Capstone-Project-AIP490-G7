@@ -1,0 +1,7 @@
+1	CLO1	Understand the development environment (IDE), programming concepts and python's world
+2	CLO2	Understand variables, expression and statement
+3	CLO3	Understand Conditional Execution, Functions, Loop and Iterations
+4	CLO4	Understand Strings
+5	CLO5	Understand Files
+6	CLO6	Understand List, Dictionaries, Tuples
+7	CLO7	Understand OOP and how to apply this technology to an actual application

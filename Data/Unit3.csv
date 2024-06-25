@@ -1,0 +1,363 @@
+Index,Question,Answer,LO,Difficult,Name concept,Supchapter,Page,Paragraph,Instruction,Inbook,Z,S,E
+34,"Determine the output of the below Python code fragment? 
+var1 = True 
+var2 = False 
+var3 = False 
+if var1 or var2 and var3: 
+    print(""True"") 
+else: 
+    print(""False"") 
+  A.FALSE 
+  B.None of these
+  C.Runtime error 
+  D.TRUE
+  E.-1
+  F.-1",D. True,LO3,Advance,"""Boolean Expression"", ""Logical Operator"", ""Conditional Execution"", ""Variable"", ""print function""","CO3.1, CO3.2, CO3.3, CO2.2, CO1.5","31, 32, 32, 20, 6","""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", ""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes.""","""assigns the boolean value True to the variable var1."", ""assigns the boolean value False to the variable var2."", ""assigns the boolean value False to the variable var3."", starts an if statement that checks if var1 is True or if both var2 and var3 are True."", ""if statement on line 4 is True, it prints the string 'True'."", ""indicates the else block to be executed if the condition in the if statement is False."", ""if statement on line 4 is False, it prints the string 'False'.""","T, T, T, T, T","43,44,44,32,18","109,22,190,131,21","132,38,211,155,61"
+53,"x = 10 
+print(x > 3 and x < 9) 
+  A.TRUE 
+  B.FALSE
+  C.-1 
+  D.-1
+  E.-1
+  F.-1",B. false,LO3,Medium,"""Boolean Expression"", ""Logical Operator"", ""Variable"", ""print function"", ""comparison Operator""","CO3.1, CO3.2, CO2.2, CO1.5, CO3.1","31, 32, 20, 6, 31","""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", ""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""The == operator is one of the comparison operators; the others are:""","""assigns the integer value 10 to the variable x."", ""prints the result of the logical expression 'x > 3 and x < 9'."" ","T, T, T, T, T","43,44,32,18,43","110,22,129,22,198","131,45,176,61,252"
+59,"How do you start writing an if statement in Python? 
+  A.if x > y then: 
+  B.if (x > y)
+  C. if ""x > y"": 
+  D.if x > y:
+  E.-1
+  F.-1",D. if x > y:,LO3,Easy,"""if statement"", ""comparison Operator""","CO3.3, CO3.1","32, 31","""The boolean expression after the if statement is called the condition. We end the if statement with a colon character (:) and the line(s) after the if statement are indented."", ""The == operator is one of the comparison operators; the others are:""",None,"T, T","44,43","22,110","45,131"
+138,"What do we do to a Python statement that is immediately after an if statement to indicate that the statement is to be executed only when the if statement is true? 
+  A.Begin the statement with a curly brace { 
+  B. Start the statement with a ""#"" character 
+  C.Indent the line below the if statement 
+  D.Underline all of the conditional code
+  E.-1
+  F.-1",C. Indent the line below the if statement,LO3,Easy,"""if statement""",CO3.3,32,"""The boolean expression after the if statement is called the condition. We end the if statement with a colon character (:) and the line(s) after the if statement are indented.""",None,T,44,227,276
+140,"What is true about the following code segment: 
+if x == 5 : 
+    print('Is 5') 
+    print('Is Still 5') 
+    print('Third 5') 
+  A. Depending on the value of x, either all three of the print statements will execute or none of the statements will execute 
+  B.The string 'Is 5' will always print out regardless of the value for x.
+  C.The string 'Is 5' will never print out regardless of the value for x. 
+  D.Only two of the three print statements will print out if the value of x is less than zero.
+  E.-1
+  F.-1","A. Depending on the value of x, either all three of the print statements will execute or none of the statements will execute",LO3,Medium,"""Conditional Execution"", ""Variable"", ""print function"", ""Boolean Expression""","CO3.3, CO2.2, CO1.5, CO3.1","32, 20, 6, 31","""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:""","""starts an if statement. The condition of the if statement is 'x == 5'."", ""If the if statement is true, print the string 'Is 5'."", ""If the if statement is true, print the string 'Is Still 5'."", ""If the if statement is true, print the string 'Third 5'."" ","T, T, T, T","44,32,43,18","192,131,200,21","225,156,248,61"
+141,"When you have multiple lines in an if block, how do you indicate the end of the if block? 
+  A.You de-indent the next line past the if block to the same level of indent as the original if statement 
+  B.You put the colon : character on a line by itself to indicate we are done with the if block
+  C.You use a curly brace { after the last line of the if block 
+  D.You capitalize the first letter of the line following the end of the if block
+  E.-1
+  F.-1",A. You de-indent the next line past the if block to the same level of indent as the original if statement,LO3,Easy,"""if statement""",CO3.3,32,"""The boolean expression after the if statement is called the condition. We end the if statement with a colon character (:) and the line(s) after the if statement are indented.""",None,T,44,227,276
+142,"You look at the following text: if x == 6 : print('Is 6') print('Is Still 6') print('Third 6') It looks perfect but Python is giving you an 'Indentation Error' on the second print statement. What is the most likely reason? 
+  A.Python has reached its limit on the largest Python program that can be run 
+  B.Python thinks 'Still' is a mis-spelled word in the string
+  C.You have mixed tabs and spaces in the file 
+  D. In order to make humans feel inadequate, Python randomly emits 'Indentation Errors' on perfectly good code - after about an hour the error will just go away without any changes to your program
+  E.-1
+  F.-1",C. You have mixed tabs and spaces in the file,LO3,Medium,"""Conditional Execution"", ""Variable"", ""print function"", ""Indentation"", ""Boolean Expression""","CO3.3, CO2.2, CO1.5, CO3.9, CO3.1","32, 20, 6, 39, 31","""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""Syntax errors are usually easy to find, but there are a few gotchas. Whitespace errors can be tricky because spaces and tabs are invisible and we are used to
+ignoring them.
+>>> x = 5
+>>> y = 6
+File ""<stdin>"", line 1
+y = 6
+ˆ
+IndentationError: unexpected indent. In this example, the problem is that the second line is indented by one space. But the error message points to y, which is misleading. In general, error messages indicate where the problem was discovered, but the actual error might be earlier in the program than where Python noticed it was confused."", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:""","""This line starts an if statement. The condition of the if statement is 'x == 6'."", ""If the condition in the if statement is true, this line will print the string 'Is 6'."", ""This line will always print the string 'Is Still 6', regardless of the value of x because it is not indented under the if statement."", ""This line will always print the string 'Third 6', regardless of the value of x because it is not indented under the if statement.""","T, T, T, T, T","44,32,18,51,52,43","190,130,23,224,10,110","227,177,51,283,35,156"
+143,"What is the Python reserved word (Tá»« dÃ nh riÃªng) that we use in two-way if tests to indicate the block of code that is to be executed if the logical test is false? 
+  A.toggle 
+  B.switch
+  C.else 
+  D.A closing curly brace followed by an open curly brace like this }{
+  E.-1
+  F.-1",C. else,LO3,Easy,"""Alternative execution""",CO3.4,34,"""A second form of the if statement is alternative execution, in which there are two possibilities and the condition determines which one gets executed. The syntax looks like this:""",None,T,46,114,167
+144,"What will the following code print out? 
+x = 0 
+if x < 2 : 
+    print('Small') 
+elif x < 10 : 
+    print('Medium') 
+else : 
+    print('LARGE') 
+print('All done') 
+  A.Small Medium All done 
+  B.Small All done
+  C.Small Medium 
+  D.LARGE All done
+  E.-1
+  F.-1",B. Small All done,LO3,Medium,"""Variable"", ""Conditional Execution"", ""Boolean Expression"", ""Chained Conditionals"", ""print function""","CO2.2, CO3.3, CO3.1, CO3.5, CO1.5","20, 32, 31, 34, 6","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a chained conditional:"", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes.""","""Assigns the integer value 0 to the variable x."", ""Starts an if statement that checks if x is less than 2."", ""If the if statement is True. It prints the string 'Small'."", ""starts an elif statement that checks if x is less than 10 and only checked if the previous if statement is False."", ""if the elif statement is True. It prints the string 'Medium'."", ""starts an else statement. This block is executed if all the previous if and elif statements are False."", ""If all the previous if and elif statements are False, It prints the string 'LARGE'."", ""Always execute and prints the string 'All done'.""","T, T, T, T, T","32,44,43,46,18","130,190,108,227,22","178,225,156,285,60"
+145,"For the following code, 
+if x < 2 : 
+    print('Below 2') 
+elif x >= 2 : 
+    print('Two or more') 
+else : 
+    print('Something else') 
+What value of 'x' will cause 'Something else' to print out? 
+  A.x = -22 
+  B.x = -2.0
+  C.This code will never print 'Something else' regardless of the value for 'x' 
+  D.x = 2.0
+  E.-1
+  F.-1",C. This code will never print 'Something else' regardless of the value for 'x',LO3,Medium,"""Variable"", ""Conditional Execution"", ""Boolean Expression"", ""Chained Conditionals"", ""print function""","CO2.2, CO3.3, CO3.1, CO3.5, CO1.5","20, 32, 31, 34, 6","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a chained conditional:"", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes.""","""Starts an if statement that checks if x is less than 2."", ""If the if statement is True. It prints the string 'Below 2'."", ""Starts an elif statement that checks if x is greater than or equal to 2. This condition is only checked if the previous if statement is False."", ""If the elif statement on line 3 is True. It prints the string 'Two or more'."",  ""Starts an else statement. This block is executed if all the previous if and elif statements are False."", ""If all the previous if and elif statements are False, it prints the string 'Something else'.""","T, T, T, T, T","32,44,43,46,18","130,190,110,226,21","178,227,157,284,61"
+146,"In the following code (numbers added) - which will be the last line to execute successfully? 
+(1) astr = 'Hello Bob' 
+(2) istr = int(astr) 
+(3) print('First', istr) 
+(4) astr = '123' 
+(5) istr = int(astr) 
+(6) print('Second', istr) 
+  A.5 
+  B.1
+  C.6 
+  D.2
+  E.-1
+  F.-1",B. 1,LO3,Medium,"""Variable"", ""print function"", ""int function"", ""Traceback""","CO2.2, CO1.5, CO4.3, CO3.7","20, 6, 44, 37","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""Python also provides built-in functions that convert values from one type to another. The int function takes any value and converts it to an integer, if it can, or complains otherwise:"", ""However if you place this code in a Python script and this error occurs, your script immediately stops in its tracks with a traceback. It does not execute the following statement.""","""Assigns the string 'Hello Bob' to the variable astr."", ""Attempts to convert the string in astr to an integer and assign it to istr. This will cause an error because 'Hello Bob' cannot be converted to an integer.""","T, T, T, T","32,18,56,49","129,21,118,26","177,62,166,47"
+147,"For the following code: 
+astr = 'Hello Bob' 
+istr = 0 
+try: 
+    istr = int(astr) 
+except: 
+    istr = -1 
+What will the value for istr after this code executes? 
+  A.FALSE 
+  B.It will be a random number depending on the operating system the program runs on
+  C.-1 
+  D.9 (the number of characters in 'Hello Bob')
+  E.-1
+  F.-1",C. -1,LO3,Medium,"""Variable"", ""int function"", ""String"", ""Try Except""","CO2.2, CO4.3, CO2.1, CO3.7","20, 44, 19, 37","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."",  ""Python also provides built-in functions that convert values from one type to another. The int function takes any value and converts it to an integer, if it can, or complains otherwise:"", ""Not surprisingly, strings belong to the type str and integers belong to the type int. Less obviously, numbers with a decimal point belong to a type called float, because these numbers are represented in a format called floating point."", ""There is a conditional execution structure built into Python to handle these types of expected and unexpected errors called “try / except”. The purpose of try and except is that you know that some sequence of instruction(s) may have a problem and you want to add some statements to be executed if an error occurs. These extra statements (the except block) are ignored if there is no error.""","""assigns the string 'Hello Bob' to the variable astr."", ""assigns the integer value 0 to the variable istr."", ""starts a try block, indicating that the following code might cause an error."", ""attempts to convert the string in astr to an integer and assign it to istr. This will cause an error because 'Hello Bob' cannot be converted to an integer."", ""starts an except block, which will be executed if an error occurs in the try block."", ""assigns the integer value -1 to istr. This line will only be executed if an error occurred in the try block.""","T, T, T, T","32,56,31,49","129,116,229,176","178,164,268,207"
+335,"Is the below syntax correct? True or Fasle 
+year = 10 
+print(""Year less than 2021"") if year < 2021 else print (""Bye 2020"") 
+  A.TRUE 
+  B.FALSE
+  C.-1 
+  D.-1
+  E.-1
+  F.-1",A. True,LO3,Medium,"""Conditional Execution"", ""Variable"", ""print function"", ""Boolean Expression""","CO3.3, CO2.2, CO1.5, CO3.1","32, 20, 6, 31","""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:""","""Assign the integer value 10 to the variable year."", ""uses a conditional expression to print a message based on the value of year.""","T, T, T, T","44,32,18,43","189,129,22,109","227,177,60,158"
+404,"On which of the following data types, '==' operator cannot be applied? Select one: 
+  A.Lists 
+  B.Sets
+  C.Dictionaries 
+  D.None of the above
+  E.-1
+  F.-1",None of the above,LO6,Easy,"""Comparison operator"", ""Lists"", ""Sets"", ""Dictionaries""","CO3.1, CO8.1, None, CO9.0","31, 91, None, 109","""The == operator is one of the comparison operators; the others are:"", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", None, ""A dictionary is like a list, but more general. In a list, the index positions have to be integers; in a dictionary, the indices can be (almost) any type.""",None,"T, T, F, T","43,103,121","198,114,90","251,134,177"
+445,"How many types of comparison operators are there in Python? Select one: 
+  A.6 
+  B.7
+  C.4 
+  D.5
+  E.-1
+  F.-1",6,LO3,Easy,"""Comparison operator""",CO3.1,31,"""The == operator is one of the comparison operators; the others are:""",None,T,43,198,252
+487,"Which of the following gives the output as False? Select one: 
+  A.5.1>5 
+  B.'5.0'==5.0
+  C.5.0==5 
+  D.None of the above
+  E.-1
+  F.-1",5.0'==5.0,LO3,Easy,"""Comparison operator"",  "" Boolean expressions""","CO3.1, CO3.1","31, 31","""The == operator is one of the comparison operators; the others are:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:""",None,"T, T","43,43","198,108","252,155"
+509,"Which of the following is true about the switch? Select one: 
+  A.We can use multiple statements separated by and/or that form condition 
+  B.The default case is not mandatory for a switch case
+  C.We implement the body of the switch by using the 'switch' keyword followed by the cases enclosed in the curly braces 
+  D.All the above
+  E.-1
+  F.-1",The default case is not mandatory for a switch case,LO3,Advance,"""Switch statement"", ""Default case""","None, None","None, None","None, None",None,"F, F",0,0,0
+532,"On which of the following data types, '==' operator cannot be applied? Select one: 
+  A.Dictionaries 
+  B.Sets
+  C.None of the above 
+  D.Lists
+  E.-1
+  F.-1",C. None of the above,LO6,Easy,"""Comparison operator"", ""Dictionaries"", ""Sets"", ""Lists""","CO3.1, CO8.1, None, CO9.0","31, 91, None, 109","""The == operator is one of the comparison operators; the others are:"", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", None, ""A dictionary is like a list, but more general. In a list, the index positions have to be integers; in a dictionary, the indices can be (almost) any type.""",None,"T, T, F, T","43,103,121","198,114,90","251,134,177"
+541,"Choose the correct option about the working of a general switch case in Python. Select one: 
+  A.Find the matching case and run the corresponding 
+  B.All the above
+  C.Search for a case that matched and run all the cases after it. 
+  D.Check for a matching case and print that value in the console.
+  E.-1
+  F.-1",A. Find the matching case and run the corresponding,LO3,Advance,"""Switch statement""",None,None,None,None,F,0,0,0
+546,"Which of the following gives 1 as an output? Select one: 
+  A.0b110 ^0b111 
+  B.None 
+  C. 0b110 & 0b111 
+  D. 0b110 | 0b111
+  E.-1
+  F.-1",A. 0b110 ^0b111,LO3,Advance,"""Bitwise operator"", ""XOR""","CO3.2, None","32, None","""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", None",None,"T, F",44,22,52
+549,"How many types of comparison operators are there in Python? Select one: 
+  A.6 
+  B.4
+  C.5 
+  D.7
+  E.-1
+  F.-1",A. 6,LO3,Easy,"""Comparison operator""",CO3.1,31,"""The == operator is one of the comparison operators; the others are:
+ x != y
+ x > y
+ x < y
+ x >= y
+ x <= y
+ x is y
+ x is not y""",None,T,43,198,252
+565,"Which of the following gives the output as False? Select one: 
+  A.'5.0'==5.0 
+  B.5.0==5
+  C.5.1>5 
+  D.None of the above
+  E.-1
+  F.-1",A. '5.0'==5.0,LO3,Easy,"""Comparison operator"",  "" Boolean expressions""","CO3.1, CO3.1","31, 31","""The == operator is one of the comparison operators; the others are:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:""",None,"T, T","43,43","198,108","252,155"
+594,"Which of the following coding blocks give an error? Select one: 
+  A.Both c and d 
+  B.9.1>'9.1'
+  C.9!='9' 
+  D.9'>'9.1'
+  E.-1
+  F.-1",B. 9.1>'9.1',LO3,Easy,"""Comparison operator"",  "" Boolean expressions"", ""Error""","CO3.1, CO3.1, CO3.9","31, 31, 39","""The == operator is one of the comparison operators; the others are:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""The traceback Python displays when an error occurs contains a lot of information, but it can be overwhelming. The most useful parts are usually:""",None,"T, T, T","43,43,51","198,108,192","252,155,226"
+600,"Which of the following operators gives 0 as the output when both the inputs are the same? Select one: 
+  A.XOR 
+  B.AND
+  C.NOT 
+  D.OR
+  E.-1
+  F.-1",A. XOR,LO3,Advance,"""Bitwise operator"", ""XOR""","CO3.2, None","32, None","""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", None",None,"T, F",44,22,54
+618,"What is the use of the default case in the switch? Select one: 
+  A.It is an extra case that runs when none of the cases match 
+  B.To get the accurate output
+  C.To prevent the occurrence of error 
+  D.Both a and c
+  E.-1
+  F.-1",D. Both a and c,LO3,Advance,"""Switch statement"", ""Default case""","None, None","None, None","None, None",None,"F, F",0,0,0
+621,"Which of the following is not a bitwise operator? Select one: 
+  A.& 
+  B.|
+  C.^ 
+  D./
+  E.-1
+  F.-1",D. /,LO3,Advance,"""Bitwise operator"", ""XOR""","CO3.2, None","32, None","""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", None",None,"T, F",44,22,53
+656,"Which of the following cannot be used to implement a switch in Python? Select one: 
+  A.Class 
+  B.Dictionary
+  C.Nested sequence 
+  D.If-else statement
+  E.-1
+  F.-1",C. Nested sequence,LO7,Advance,"""Switch statement"", ""Class"", ""Dictionary"", ""Nested sequence"", ""if-else statement""","None, CO14.7, CO9.0, CO8.3, CO3.4","None, 178, 109, 93, 34","None, ""As we have seen, in Python all variables have a type. We can use the built-in dir function to examine the capabilities of a variable. We can also use type and dir with the classes that we create."", ""A dictionary is like a list, but more general. In a list, the index positions have to be integers; in a dictionary, the indices can be (almost) any type."", ""Although a list can contain another list, the nested list still counts as a single element. The length of this list is four:"", ""A second form of the if statement is alternative execution, in which there are two possibilities and the condition determines which one gets executed. The syntax looks like this:""",None,"F, T, T, T, T","190,121,105,46","156,91,118,112","180,177,152,166"
+672,"What is the output of the following code? 
+var=2 
+print(2==2.0) 
+Select one: 
+  A.FALSE 
+  B.TRUE
+  C.TRUE 
+  D.FALSE
+  E.-1
+  F.-1",B. True,LO3,Medium,"""Variable"", ""print function"", ""Boolean Expression"", ""Float""","CO2.2, CO1.5, CO3.1, CO2.1","20, 6, 31, 19","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""Less obviously, numbers with a decimal point belong to a type called float, because these numbers are represented in a format called floating point."" ","""assigns the integer value 2 to the variable var."", ""prints the result of the comparison between 2 and 2.0.""","T, T, T, T","32,18,43,31","130,21,109,230","176,51,157,268"
+676,"Find the output of the following code? 
+a=5 
+b=(a==2) 
+print(b+3) 
+Select one: 
+  A.1 
+  B.3
+  C.4 
+  D.2
+  E.-1
+  F.-1",B. 3,LO3,Medium,"""Variable"", ""print function"", ""Boolean Expression"", ""Integer"", ""Operator""","CO2.2, CO1.5, CO3.1, CO2.1, CO2.5","20, 6, 31, 19, 22","""One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""These values belong to different types: 2 is an integer, and “Hello, World!” is a string, so called because it contains a “string” of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks."", ""The operators +, -, *, /, and ** perform addition, subtraction, multiplication, division, and exponentiation, as in the following examples: ""","""assigns the integer value 5 to the variable a."", ""evaluates the comparison 'a == 2' and assigns the result to the variable b."", ""prints the result of the expression 'b + 3'.""","T, T, T, T, T","32,18,43,31,34","130,21,109,122,119","176,51,157,190,192"
+682,"How do you start writing an if statement in Python? (Choose 1 answer) 
+  A.if (x > y) 
+  B.if x > y then:
+  C.x > y?: 
+  D.if x > y:
+  E.-1
+  F.-1",D,LO3,Easy,"""if statement"", ""comparison Operator""","CO3.3, CO3.1","32, 31","""The boolean expression after the if statement is called the condition. We end the if statement with a colon character (:) and the line(s) after the if statement are indented."", ""The == operator is one of the comparison operators; the others are:""",None,"T, T","44,43","22,110","45,131"
+690,"What is the output of the code? 
+try: 
+    list=5*[0]+5[10] 
+    x = list(9] 
+    print(""Done!"") 
+except IndexError: 
+    print(""Index out of Bond!"") 
+else: 
+    print(""Nothing is wrong!"") 
+finally: 
+    print(""Finally block!"") 
+t=[9, 41, 12, 3, 74, 15] 
+  A.Nothing is wrong followed by 'Finally block' 
+  B.Finally Block!
+  C. 'Done!"" follow by Nothing wrong!"" followed by Finally block. 
+  D.Done!"" follow by ""Nothing wrong!'
+  E.-1
+  F.-1",C,LO3,Advance,"""Try Except"", ""List"", ""IndexError"", ""print function"", ""Repetition"", ""Variable""","CO3.7, CO8.1, CO8.2, CO1.5, CO8.4, CO2.2","37, 91, 92, 6, 93, 20","""There is a conditional execution structure built into Python to handle these types of expected and unexpected errors called “try / except”. The purpose of try and except is that you know that some sequence of instruction(s) may have a problem and you want to add some statements to be executed if an error occurs. These extra statements (the except block) are ignored if there is no error."", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", ""Unlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned."", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes."", ""Similarly, the * operator repeats a list a given number of times:"", ""An assignment statement creates new variables and gives them values:""","""starts a try block, indicating that the following code might cause an error."", ""attempts to create a list by concatenating 5 repetitions of the list [0] with the element at index 10 of the list [5]"", ""attempts to access the element at index 9 of the list 'list'"", ""prints the string 'Done!'"", ""starts an except block that will be executed if an IndexError occurs in the try block."", ""prints the string 'Index out of Bond!'"", ""starts an else block, which will be executed if no error occurs in the try block"", ""prints the string 'Nothing is wrong!'. This line will not be executed because an error occurred."", ""starts a finally block, which will always be executed, regardless of whether an error occurred or not."", ""prints the string 'Finally block!'"", ""assigns a list of numbers to the variable t.""","T, T, T, T, T, T","49,103,104,18,105,32","174,114,61,22,219,130","206,134,112,61,265,177"
+696,"For the following code 
+x = 1 
+if x < 2 : 
+    print('Below 2') 
+elif x >= 2 : 
+    print('Two or more') 
+else : 
+    print('Something else') 
+What value of 'x' will cause 'Something else' to print out? 
+  A.x = -22 
+  B.x = -2.0
+  C.This code will never print 'Something else' regardless of the value for 'x' 
+  D.x = 2.0
+  E.-1
+  F.-1",C,LO3,Medium,"""Variable"", ""Conditional Execution"", ""Boolean Expression"", ""Chained Conditionals"", ""print function""","CO2.2, CO3.3, CO3.1, CO3.5, CO1.5","20, 32, 31, 34, 6","""An assignment statement creates new variables and gives them values:"", ""In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"", ""A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"", ""Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a chained conditional:"", ""And we have even written our first syntactically correct Python sentence. Our sentence starts with the function print followed by a string of text of our choosing enclosed in single quotes.""","""assigns the integer value 1 to the variable x."", ""starts an if statement that checks if x is less than 2."", ""if the if statement on line 2 is True, itt prints the string 'Below 2'."", ""starts an elif statement that checks if x is greater than or equal to 2."", ""if the elif statement is True it prints the string 'Two or more'."", ""starts an else statement."", ""if the else statement is True it prints the string 'Something else'.""","T, T, T, T, T","32,44,43,46,18","130,188,108,229,21","179,227,158,285,64"
+700,"What is the default use case in conversion? Select one: 
+  A.It is an additional case that runs when there are no matching cases 
+  B.To avoid errors
+  C.To get the correct output 
+  D.Both a and c
+  E.-1
+  F.-1",A,LO3,Advance,"""Switch statement"", ""Default case""","None, None","None, None ","None, None",None,"F, F",0,0,0
+705,"The operator'==' cannot be applied to which of the following data types? Select one: 
+  A.Dictionary 
+  B.Ministry
+  C.List 
+  D.None of the above
+  E.-1
+  F.-1",D,LO6,Easy,"""Comparison operator"", ""Dictionaries"", ""Sets"", ""Lists""","CO3.1, CO8.1, None, CO9.0","31, 91, None, 109","""The == operator is one of the comparison operators; the others are:"", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", ""Like a string, a list is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in lists are called elements or sometimes items."", None, ""A dictionary is like a list, but more general. In a list, the index positions have to be integers; in a dictionary, the indices can be (almost) any type.""",None,"T, T, F, T","43,103,121","198,114,90","251,134,177"
+706,"Which of the following output is False? Select one: 
+  A.5.0==5 
+  B.None of the above
+  C.5.1 >5 
+  D.'5.0'==5.0
+  E.-1
+  F.-1",D,LO3,Easy,"""Comparison operator"", ""Type""","CO3.1, CO2.1","31, 19","""The == operator is one of the comparison operators; the others are:"", ""These values belong to different types: 2 is an integer, and “Hello, World!” is a string, so called because it contains a “string” of letters. You (and the interpreter) can identify strings because they are enclosed in quotation mark""",None,"T, T","43,43","198,108","252,156"
+713,"Choose the correct alternative about the general switch case operation in Python. Select one: 
+  A.Find a matching instance and run all cases after it. 
+  B.All of the above
+  C.Check for a match and print that value in the console. 
+  D.Find the matching case and run accordingly
+  E.-1
+  F.-1",D,LO3,Advance,"""Switch statement""",None,None,None,None,F,0,0,0
+716,"How many types of comparison operators are there in Python? Select one: 
+  A.5 
+  B.6
+  C.4 
+  D.7
+  E.-1
+  F.-1",B,LO3,Easy,"""Comparison operator""",CO3.1,31,"""The == operator is one of the comparison operators; the others are:""",None,T,43,198,253
+729,"Which of the following is true about work? Select one: 
+  A.All of the above 
+  B.We implement the body of the switch using the keyword 'switch' followed by the cases enclosed in curly braces
+  C.Default case is not required for switch case 
+  D.We can use multiple statements separated by and/or conditionals of the form that
+  E.-1
+  F.-1",C,LO3,Advance,"""Switch statement"", ""Default case""","None, None","None, None","None, None",None,"F, F",0,0,0
+743,"Which of the following is not a bitwise operator? Select one: 
+  A.^x 
+  B.|
+  C.& 
+  D./
+  E.-1
+  F.-1",D. /,LO3,Advance,"""Bitwise operator"", ""XOR""","CO3.2, None","32, None","""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", None",None,"T, F",44,22,53
+744,"Which of the following operators outputs 0 when both inputs are the same? Select one: 
+  A.NOT 
+  B.OR
+  C.XOR 
+  D.AND
+  E.-1
+  F.-1",C. XOR,LO3,Advance,"""Bitwise operator"", ""XOR""","CO3.2, None","32, None","""There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example,"", None",None,"T, F",44,21,53
