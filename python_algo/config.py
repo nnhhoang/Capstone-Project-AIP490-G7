@@ -1,13 +1,13 @@
 from google.generativeai.types.safety_types import HarmBlockThreshold, HarmCategory
 from sentence_transformers import SentenceTransformer
 
-#GOOGLE_API_KEY='AIzaSyDvA8cBjoTi2-Ioa_YfKRGq15SOE-rE6v8'
-GOOGLE_API_KEY= 'AIzaSyDB-L6rOtZPzRFEryMepy-K8Oa1youxrgg'
-# GOOGLE_API_KEY= 'AIzaSyDqQcb7A3akSrQ8Jd7Z9oqwcdUw3_TxiyQ'
-# GOOGLE_API_KEY = 'AIzaSyC4I1PqLzSRKA-K1vZMGph0LAYFsX--R8A'
-# GOOGLE_API_KEY='AIzaSyC6oWOS0Z1oZe4cBR386oEhKSEOUyxB_IE'
+#GOOGLE_API_KEY='x'
+GOOGLE_API_KEY= 'x'
+# GOOGLE_API_KEY= 'x'
+# GOOGLE_API_KEY = 'x'
+# GOOGLE_API_KEY='x'
 
-GOOGLE_API_KEY_FOR_GEN = 'AIzaSyC4I1PqLzSRKA-K1vZMGph0LAYFsX--R8A'
+GOOGLE_API_KEY_FOR_GEN = 'x'
 
 generation_config_gen = {
         "temperature": 1,
