@@ -57,6 +57,17 @@ class SpatialTransform:
    
         modify_toc  = [item for item in new_toc if len(item[0]) != 1]
         return modify_toc
+
+    def modify_toc(self, link_pdf):
+        doc = fitz.open(link_pdf)
+        text_by_page = []
+        for page_num in range(doc.page_count):
+            page = doc.load_page(page_num)
+            text = page.get_text("text").replace('\n', ' ')
+            text_by_page.append(text)
+            
+        old_toc = doc.get_toc()
+        return self.convert_toc(old_toc)
     
     def create_subchapter_matrix(self, link_pdf):
         doc = fitz.open(link_pdf)
