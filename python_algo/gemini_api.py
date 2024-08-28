@@ -1,13 +1,10 @@
-from langchain_google_genai import GoogleGenerativeAI
-
+from google.generativeai import caching
 import google.generativeai as genai
-import datetime
+from python_algo.config import GOOGLE_API_KEY, generation_config, safety_settings
 import os
-import PyPDF2
-from python_algo.config import GOOGLE_API_KEY, generation_config, safety_settings, cache_time
 
 global book_path
-book_path = r"data\python_learn.pdf"
+book_path = r"current\input_file\pythonlearn.pdf"
 
 def read_pdf(file_path: str):
     pdf_data = ""  
@@ -19,7 +16,10 @@ def read_pdf(file_path: str):
     return pdf_data
 
 class Prompt():
-    def prompt_chapter(self, question):
+    def prompt_explanation(self, 
+                           question, 
+                           context
+                           ):
         out_format = """
         {
             "Id": "...",
@@ -27,15 +27,14 @@ class Prompt():
         }
         """
         prompt = f"""
-        You are an expert in Python and a duplication checking agent, you have an in-depth knowledge
+        You are a code assistant, a highly advanced large language model have in-depth knowledge
         of Python programming. Your core strengths lie in tackling complex Python questions,
         utilizing intricate reasoning, and delivering solutions through methodical problem-solving.
-        Throughout this interaction, you will encounter a variety of Python problems,
-        ranging from basic theories to advanced algorithms.
 
-        'python for everyone', which is a textbook about Python programming language. This
-        textbook provides an Informatics-oriented introduction to programming. You responds have
-        to based on the knowledge and context contained in this notebook.
+        You responds have to based on the knowledge and context contained in below part.
+        -------- 
+        {context}
+        --------
         Now, remember your primary objective is to dissect and address each problem with a rigorous
         and detailed approach. This task involves:
         1. Clearly identifying and understanding the question.
@@ -59,21 +58,20 @@ class Prompt():
         Answer: {question['ans']}
         Id: {question['id']}
         """
-
+        
         return prompt
 
     def prompt_check_dup(self, question1, question2):
         response_format = """
-        [
-            {"Id": "id of compare question", "Level": "level number", "Reason": "reason" },
-            {"Id": "id of compare question", "Level": "level number", "Reason": "reason" },
-            ...
-            {"Id": "id of compare question", "Level": "level number", "Reason": "reason" }
-            
-        ]
+        {
+            'Id': {
+                Level:...,
+                Reason:...
+            },...
+        }
         """
         prompt = f"""
-        You are an expert in Python and a duplication checking agent, you have an in-depth knowledge
+        You are an expert in Python and a duplication-checking agent, you have an in-depth knowledge
         of Python programming. Your core strengths lie in tackling complex Python questions,
         utilizing intricate reasoning, and delivering solutions through methodical problem-solving.
         Throughout this interaction, you will encounter a variety of Python problems,
@@ -86,36 +84,21 @@ class Prompt():
         example, and context in question.
         3. Analyzing the correct answer and instruction of the question to understand how to solve 
         the problem and the step-by-step to the correct answer.
-        4. Compare given question with original question to find out whether they are duplicate or 
+        4. Compare the given question with the original question to find out whether they are duplicates or 
         not. Analyze the grammatical structure and meaning of two questions. Determine whether they 
-        have the same subject, main verb, and semantic object. Use 'python for everyone' textbook as 
-        a knowledge base or ontology to determine whether two questions refer to the same concept or 
-        entity.
+        have the same subject, main verb, and semantic object. Determine whether two questions refer
+        to the same concept or entity.
         ###
-        I will give you an original question and a list of question. You have to comply with above 
+        I will give you an original question and a list of questions. You have to comply with the above 
         thought process to compare each question in the list with the original question. Each 
         question will be evaluated through the following fields:
             'Question': Orginal question,
             'Correct answer': Correct answer of the question,
             'Instruction': Correct answer explanation of the question,
-            'IoU score': Similarity score based on knowledge from the book between this question and original question
-            'Semantic score': the semantic score calculated between questions
         ###
-        Your response must follow below JSON format: 
-        {{
-        "Id": {{"Level": "level number", "Reason": "an explaination"}},
-        ...
-        "Id": {{"Level": "level number", "Reason": "an explaination"}}
-        }}
-        With 'Id' is the Id of the question in list of question to be compared with original question, 'Level' is 0 for not duplicate or 1 for duplicate base on involves 4.
-        Reason is the reason why you conclude that level. Reason is a string.
-        This is an example: 
-        {{
-        "34": {{"Level": "1", "Reason": "an explaination"}},
-        "33": {{"Level": "0", "Reason": "an explaination"}},
-        ...
-        "39": {{"Level": "1", "Reason": "an explaination"}}
-        }}
+        Your response must follow format: {response_format}
+        With 'Id' is the Id of the question to be compared with the original question , 'Level' is 0 for not duplicate or 1 for duplicate based on involves 4.
+        Reason is the reason why you conclude that level.
         ###
         Original question: {question1}
         List of question: {question2}
@@ -123,35 +106,30 @@ class Prompt():
 
         return prompt
     
-    def prompt_eval(self, question1, question2):
-        format_out = """
-        {
-            'Id':...,
-            'Score':...
-        }
-        """
-        prompt =f"""
-        You are an expert in evaluate the correction of how to solve a Python problem. Evaluate 
-        the response to the below question, taking into account the correct answer supplied by 
-        the teacher. You should give an evaluation between 0 and 5, with the following meanings:
-        5: This is an excellent, accurate answer.
-        4: Good answer, almost everything is correct.
-        3: Mostly correct.
-        2: Contains innacurracies.
-        1: Mostly innaccurate.
-        0: Completely wrong.
-        Original question asked: {question1['question_content']}
-        Correct answer: {question1['instruction']}
-        Response to be evaluated by prompt technique: {question2}
-        Please show your reasoning by summarizing the correct answer and summarizing the answer 
-        from the response to be evaluated by prompt technique. Break the summary to smaller step .
-        Then, comparing whether each correspond step in summary are the same or not. If there 
-        are lack of information or redundant of information. The step-by-step must be sequentially, 
-        if the first step is define something, the correspond step in evaluated response must be 
-        also have 'define' keyword.
-        Please note that your score should be in a json format as below:{format_out}
-        """
+    def prompt_check_dup_all(self,original_question, list_question):
 
+        prompt=f"""
+            You are an expert in ranking the question. Your task is to rank the given list of 
+            questions sequentially based on similarity to an original question.Your decision must based on aggregation
+            of topic, concept, problem, logic of the questions.
+            ###
+            "Original question":  
+                Question: {original_question['question_content']}
+                Answer: {original_question['ans']}
+                Id: {original_question['id']}
+            ###
+            "List of questions to be compared":
+            [{list_question}]
+            ###
+            Your ranking decision will comply with the following JSON structure:
+            {{
+                "Rank 1": {{"id": , "reason": ,"similar_percent": }},
+                "Rank 2": {{"id": , "reason": ,"similar_percent":}},
+                ...
+                "Rank n": {{"id": , "reason": ,"similar_percent":}}
+            }}
+            """
+        
         return prompt
 
 class LLM:
@@ -161,29 +139,28 @@ class LLM:
         genai.configure(api_key=os.environ['GENAI_API_KEY'])
 
         self.prompt = Prompt()
-
        
         genai.configure(api_key= GOOGLE_API_KEY)
-        self.LLM = genai.GenerativeModel('gemini-1.5-flash', generation_config=generation_config)
+        self.LLM = genai.GenerativeModel('models/gemini-1.5-pro-001', generation_config=generation_config)
 
-    def get_prompt(self, task_num, question_1, question_2 = None):
-        prompt = self.prompt
+    def get_prompt(self, 
+                   task_num, 
+                   question_1, 
+                   question_2, 
+                   context = None
+                   ):
+      
         if task_num == 1:
-            return prompt.prompt_chapter(question_1)
-        elif task_num == 2:
-            return prompt.prompt_check_dup(question_1,question_2)
+            return  self.prompt.prompt_explanation(question_1, context)
+        elif task_num == -1:
+            return  self.prompt.prompt_check_dup_all(question_1, question_2)
         else:
-            return prompt.prompt_eval(question_1,question_2)
+            return  self.prompt.prompt_check_dup(question_1,question_2)
      
     def get_completion(self, 
                         prompt
                         ):
         result = self.LLM.generate_content(prompt)
         return result.text
-    
-    def get_completion_for_eval(self,
-                                prompt
-                                ):
-        result = self.LLM.generate_content(prompt)
-        return result
+
     
