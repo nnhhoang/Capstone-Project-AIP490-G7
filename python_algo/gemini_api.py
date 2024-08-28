@@ -1,7 +1,9 @@
 from google.generativeai import caching
 import google.generativeai as genai
-from python_algo.config import GOOGLE_API_KEY, generation_config, safety_settings
+import datetime
 import os
+import PyPDF2
+from python_algo.config import GOOGLE_API_KEY, generation_config, safety_settings, cache_time
 
 global book_path
 book_path = r"current\input_file\pythonlearn.pdf"
@@ -31,6 +33,9 @@ class Prompt():
         of Python programming. Your core strengths lie in tackling complex Python questions,
         utilizing intricate reasoning, and delivering solutions through methodical problem-solving.
 
+        'python for everyone', which is a textbook about Python programming language. This
+        textbook provides an Informatics-oriented introduction to programming. You responds have
+        to based on the knowledge and context contained in this notebook.
         You responds have to based on the knowledge and context contained in below part.
         -------- 
         {context}
@@ -129,8 +134,12 @@ class Prompt():
                 "Rank n": {{"id": , "reason": ,"similar_percent":}}
             }}
             """
+        # print('feddddddddddd')
+        # print(prompt)
         
         return prompt
+    
+
 
 class LLM:
     def __init__(self):
@@ -139,9 +148,16 @@ class LLM:
         genai.configure(api_key=os.environ['GENAI_API_KEY'])
 
         self.prompt = Prompt()
-       
-        genai.configure(api_key= GOOGLE_API_KEY)
-        self.LLM = genai.GenerativeModel('models/gemini-1.5-pro-001', generation_config=generation_config)
+
+        self.cache = caching.CachedContent.create(
+            model="models/gemini-1.5-pro-001",
+            display_name="python for everyone", 
+            system_instruction="You are an expert in Python and a duplication checking agent, you have an in-depth knowledge of Python programming. Your core strengths lie in tackling complex Python questions, utilizing intricate reasoning, and delivering solutions through methodical problem-solving. Throughout this interaction, you will encounter a variety of Python problems, ranging from basic theories to advanced algorithms.",
+            contents=[book],
+            ttl=datetime.timedelta(minutes=cache_time),
+        )
+        self.LLM = genai.GenerativeModel.from_cached_content(cached_content=self.cache, generation_config=generation_config, safety_settings=safety_settings)
+
 
     def get_prompt(self, 
                    task_num, 
@@ -156,11 +172,9 @@ class LLM:
             return  self.prompt.prompt_check_dup_all(question_1, question_2)
         else:
             return  self.prompt.prompt_check_dup(question_1,question_2)
-     
+
     def get_completion(self, 
-                        prompt
-                        ):
+                       prompt
+                       ):
         result = self.LLM.generate_content(prompt)
         return result.text
-
-    
